@@ -8,21 +8,23 @@ h1{
 	display: block;
     margin-left: auto;
 	margin-right: auto;
-	margin-top:85px;
-	display: absolute;
-
+	margin-top: 85px;
+	position: relative;
 }
 
 #hat {
+	display: block;
     position: relative;
-    top: 100px; left: 340px;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top:-225px;    
 }
 
 #glasses {
+	display: block;
     position: relative;
-    top: 273px; left: 390px;
+    margin-left: auto;
+	margin-right: auto; 
+	margin-top: -190px;  
 }
 
-.octopus1{
-	position: relative
-}
