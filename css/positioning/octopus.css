@@ -1,0 +1,28 @@
+h1{
+	font-family: Helvetica;
+	background-color: yellow;
+	display:inline-flex;
+}
+
+#octopus {
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top:85px;
+	display: absolute;
+
+}
+
+#hat {
+    position: relative;
+    top: 100px; left: 340px;
+}
+
+#glasses {
+    position: relative;
+    top: 273px; left: 390px;
+}
+
+.octopus1{
+	position: relative
+}
