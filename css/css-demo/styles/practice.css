@@ -12,3 +12,11 @@
 .accomplishments{
 	font-size:.8em;
 }
+
+ul.accomplishments li:last-of-type {
+	background-color: gray;
+}
+
+ul li{
+	font-size: 12px;
+}
