@@ -1,32 +1,89 @@
+html{  
+    display: table;
+    margin: auto;
+}
+
+body {
+ vertical-align: middle;
+ display: table-cell;
+ max-width: 960px;
+ text-align: center;
+}
+
+main {
+ width: 75%;
+ min-width: 100px;
+ display: inline-block;
+ float: left;
+ padding: 1%;
+}
+
 blockquote {
-  border-left: 5px solid blue;
-  padding: 15px;
-  margin-left: 0px;
+ border-left: 5px solid blue;
+ padding: 15px;
+ margin-left: 0px;
 }
 
 cite {
-  display: block;
-  margin-top: 10px;
+ display: block;
+ margin-top: 10px;
 }
 
-#external-links ul {
-  list-style-type: none;
-  padding-left: 0px;
+section#external-links {
+ position: inline-block;
+ float: left;
+ vertical-align: text-top;
+ width: 15%;
+ min-width: 100px;
+ padding: 1%
+}
+
+ #external-links ul {
+ list-style-type: none;
+ padding-left: 0px;
+ display: inline-block;
+ 
 }
 
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
 img {
-  width: 100%;
+ width: 100%;
 }
 
 figure {
-  margin-left: 0px;
-  margin-right: 0px;
+ margin-left: 0px;
+ margin-right: 0px;
 }
 
 figcaption {
-  font-style: italic;
-  text-align: right;
+ font-style: italic;
+ text-align: right;
 }
+
+@media screen and (max-width: 560px ){
+section#external-links {
+  width:100%;
+
+}
+
+@media screen and (max-width: 560px ){
+  main{
+  width:100%;
+  }
+}
+
+@media screen and (max-width: 250px){
+  body {
+    font-size: 60%;
+  }
+
+}
+/*
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+} 
+*/
