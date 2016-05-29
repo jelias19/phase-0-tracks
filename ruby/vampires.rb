@@ -1,3 +1,9 @@
+#Ask how many employees will be questioned. Creating a loop for employee count.
+puts "How many employees will be processed by questionaire?"
+	number_questioned = gets.chomp
+	number = 1
+while number <= number_questioned.to_i
+
 #Ask for users name.
 puts "What is your name?"
 	name = gets.chomp
@@ -33,3 +39,8 @@ end
 
 #print vampire status
 puts result	
+
+#add to counter for loop after each input.
+number += 1
+
+end
