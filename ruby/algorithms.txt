@@ -4,13 +4,13 @@ RobotElevatorAlgorithm
 	-If this is desired floor number, do not press buttons.
 -If you are going to a floor higher than current location, press the up button.
 	- Doors open, enter elevator, and look for numbered buttons on wall. 
-	- Look for button number of floor you need to go to.
+	- Scan for button number of floor you need to go to.
 	- Press button for desired floor number, and elevator will move.
 	- When the elevator comes to a stop, look above door for floor number.
 	- Exit elevator
 -If you are going to a floor lower than current location, press the down button.
 	- Doors open, enter elevator, and look for numbered buttons on wall. 
-	- Look for button number of floor you need to go to.
+	- Scan for button number of floor you need to go to.
 	- Press button for desired floor number, and elevator will move.
 	- When the elevator comes to a stop, look above door for floor number.
 	- Exit elevator
@@ -21,12 +21,12 @@ SendingEmail
 -Shake mouse or press keyboard to wake computer
 -If screen lights up, open a web browser.
 	-Visit gmail.com
-	-enter email address and password
-	-click button for compose email
-	-enter recipient email and subject
-	-enter the body of email
+	-using keyboard, enter email address and password
+	-move mouse to hover over button to compose email, click mouse
+	-enter recipient email and subject using keyboard
+	-enter the body of email using keyboard
 	-review and read email
-	-click send button
+	-click send button with mouse
 
 -If screen does not light up, press power button.
 	-Computer screen should now be on.
