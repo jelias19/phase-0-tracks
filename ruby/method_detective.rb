@@ -8,6 +8,7 @@ p "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
 p "zom".insert(1, 'o')
+p "zom".insert(2, 'o')
 # => “zoom”
 
 p "enhance".center(15)
@@ -17,6 +18,7 @@ p "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 p "the usual".insert 9, " suspects"
+p "the usual".insert -1, " suspects"
 #=> "the usual suspects"
 
 p " suspects".insert 0, "the usual"
@@ -25,9 +27,8 @@ p " suspects".insert 0, "the usual"
 p "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-letter = "The mystery of the missing first letter"
-letter.slice!(0)
-p letter
+p "The mystery of the missing first letter".reverse.chop.reverse
+
 # => "he mystery of the missing first letter"
 
 p "Elementary,    my   dear        Watson!".split.join (" ")
