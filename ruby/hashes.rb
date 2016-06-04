@@ -38,6 +38,7 @@ puts "Location of Project: #{client[:location]}"
 puts "If information needs to be updated, type that field. Please enter no if everything is final."
 	update_field = gets.chomp
 	if update_field == "no"
+		puts "The client information is correct."
 	else
 		puts "Please enter the updated information?"
 		new_client_info = gets.chomp
