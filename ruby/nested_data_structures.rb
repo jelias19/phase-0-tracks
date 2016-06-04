@@ -5,12 +5,12 @@ hockey_stadium = {
 			"Bauer",
 			"Reebok",
 			"EA Sports"
-			]
-	},
+			],
 		capacity: {
 			seating_room: 400,
 			standing_room: 100
 		},
+	},
 	bathroom_1: {
 		gender: 'Male',
 		sinks: 6,
@@ -68,34 +68,50 @@ hockey_stadium = {
 		seating: 24,
 	},
 	cafeteria:{
-		Drinks: [
+		drinks: [
 			"Gatorade",
 			"Snapple",
 			"Water",
-			Soda:[ 
+			soda:[ 
 				"Pepsi",
 				"Diet Pepsi",
 				"Mountain Dew"
 			],
 		],
-		Snacks: [
+		snacks: [
 			"Popcorn",
 			"Nachos",
-			Candy:[
+			candy:[
 				"Twix",
 				"Snickers",
 				"Swedish Fish"
 			],
 		],
-		Entrees: [
+		entrees: [
 			"Cheeseburger",
 			"Hamburger",
 			"Chicken Fingers with Fries",
 			"Hot Dog",
 		],
-		Condiments: [
+		condiments: [
 			"Ketchup",
 			"Mustard",
 			"Mayonanise"],
 	},
 }
+
+puts "The following drinks are available:"
+ p hockey_stadium[:cafeteria][:drinks]
+
+puts "The follow sodas are available:
+ #{hockey_stadium[:cafeteria][:drinks][3]}"
+
+puts "The follow entrees are available:"
+p hockey_stadium[:cafeteria][:entrees]
+puts "with the following condiments:"
+p hockey_stadium[:cafeteria][:condiments]
+
+puts "There is room for #{hockey_stadium[:ice_rink][:capacity][:seating_room]} people to sit while watching the game."
+
+puts "#{hockey_stadium[:locker_room_1][:seating]} people can sit in #{hockey_stadium[:locker_room_1][:name]}"
+
