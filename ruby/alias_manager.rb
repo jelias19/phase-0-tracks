@@ -3,8 +3,40 @@
 #Swap spy's first name with last name, creating an array
 #Change all vowels to next vowel, and all consonants to next consonant. 
 
+
+#Create method for swapping name
 def first_last_swap(name)
-	name.split(' ').reverse.join(' ')
+	name.split(' ').reverse.join(' ').downcase
+end
+
+#Create a method to take either next vowel or consonant using index value
+def next_letter(letter)
+	vowels = 'aeiou'
+	consonants = 'bcdfghjklmnpqrstvwxyz'
+		if vowels.include?(letter)
+			if vowels.index(letter)+1 >= vowels.length
+				vowels[0]
+			else
+				vowels[vowels.index(letter).next]
+			end
+		elsif consonants.include?(letter)
+			if consonants.index(letter)+1 >= consonants.length
+				consonants[0]
+			else
+				consonants[consonants.index(letter).next]
+		end
+	else letter
+	end
+end
+
+#Create a method to change the actual letter
+def letter_adjustment(name)
+	i=0
+	while i<name.length
+		name[i] = next_letter(name[i])
+		i+=1
+	end
+	name
 end
 
 
