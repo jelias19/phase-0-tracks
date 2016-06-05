@@ -3,10 +3,13 @@
 #Initialize empty hash for client information
 client = {}
 
+
+puts "Welcome to Jeff's Interior Design. Please answer the following questions so we can best serve you."
+
 #Ask for clients full name.
 #Store users input into the hash
 puts "What is your full name?"
-client[:name] = gets.chomp.split(' ').capitalize.join(' ')
+client[:name] = gets.chomp
 
 #Ask for the age of client.
 #Store users age into the hash
@@ -55,7 +58,8 @@ puts "If information needs to be updated, type that field. Please enter no if ev
 		end
 	end
 
-puts "The final client details are as follows"
+#Print final outcome of survery.
+puts "The final client details are as follows:"
 puts "Name: #{client[:name]}"
 puts "Age: #{client[:age]}"
 puts "Number of Children: #{client[:number_of_children]}"
