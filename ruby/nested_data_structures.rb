@@ -1,6 +1,6 @@
 hockey_stadium = {
 	ice_rink: {
-		name: 'Buffalo Wings',
+		name: 'Buffalo Wings Den',
 		sponsors: [
 			"Bauer",
 			"Reebok",
@@ -100,8 +100,9 @@ hockey_stadium = {
 	},
 }
 
+
 puts "The following drinks are available:"
- p hockey_stadium[:cafeteria][:drinks]
+p hockey_stadium[:cafeteria][:drinks]
 
 puts "The follow sodas are available:
  #{hockey_stadium[:cafeteria][:drinks][3]}"
@@ -111,7 +112,9 @@ p hockey_stadium[:cafeteria][:entrees]
 puts "with the following condiments:"
 p hockey_stadium[:cafeteria][:condiments]
 
-puts "There is room for #{hockey_stadium[:ice_rink][:capacity][:seating_room]} people to sit while watching the game."
+#Print seating room at stadium.
+puts "There is room for #{hockey_stadium[:ice_rink][:capacity][:seating_room]} people to sit while watching the game at the #{hockeystadium[:ice_rink][:name]}."
 
+#Print number of people in locker room 1 and name.
 puts "#{hockey_stadium[:locker_room_1][:seating]} people can sit in #{hockey_stadium[:locker_room_1][:name]}"
 
