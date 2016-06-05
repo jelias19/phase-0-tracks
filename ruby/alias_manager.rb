@@ -39,6 +39,11 @@ def letter_adjustment(name)
 	name
 end
 
+#Create method to adjust name
+def aliases(name)
+	changed_name = first_last_swap(name)
+	letter_adjustment(changed_name)
+end
 
 #Creating a User Interface
 username = ""
@@ -52,6 +57,6 @@ puts "What name would you like to be aliased? Type quit when done."
 	if username == "quit"
 		p "Thank you for using the Alias Generator."
 	else
-		p first_last_swap(username)
+		p aliases(username)
 end
 end
