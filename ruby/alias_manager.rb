@@ -48,6 +48,9 @@ end
 #Creating a User Interface
 username = ""
 
+#Empty hash
+spy_name = {}
+
 #Ask user for information
 #Continue to ask until quit is entered.
 while username!= "quit"
@@ -58,5 +61,12 @@ puts "What name would you like to be aliased? Type quit when done."
 		p "Thank you for using the Alias Generator."
 	else
 		p aliases(username)
+		spy_name.store(username,aliases(username))
 end
+end
+
+#Print spy name and real name
+spy_name.each do |full_name, alias_name|
+	puts "#{full_name} is using the name #{alias_name} to hide their true identity. Be on the lookout."
+
 end
