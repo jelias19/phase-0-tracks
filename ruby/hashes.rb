@@ -6,7 +6,7 @@ client = {}
 #Ask for clients full name.
 #Store users input into the hash
 puts "What is your full name?"
-client[:name] = gets.chomp.capitalize
+client[:name] = gets.chomp.split(' ').capitalize.join(' ')
 
 #Ask for the age of client.
 #Store users age into the hash
