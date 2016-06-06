@@ -56,7 +56,6 @@ spy_name = {}
 while username!= "quit"
 puts "What name would you like to be aliased? Type quit when done."
 	username = gets.chomp
-	p first_last_swap(username)
 	if username == "quit"
 		p "Thank you for using the Alias Generator."
 	else
