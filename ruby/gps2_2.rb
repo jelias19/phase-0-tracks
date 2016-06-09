@@ -52,7 +52,6 @@ def print_list(list)
   list.each { |item, quantity| puts "You need #{quantity} #{item}(s)." }
 end
 
-
 ### TESTING CODE
 
 #Initial Grocery List
@@ -80,3 +79,35 @@ item_quantity(groceries, "ice cream", 1)
 
 #Print List
 print_list(groceries)
+
+
+
+=begin
+#RELEASE 5:REFLECT
+
+1. What did you learn about pseudocode from working on this challenge?
+
+	I learned the importance of pseudocode and how much it can help build out the code you are looking to write.
+	The more detailed the pseudocode is, the easier it will be to write the program, and help you underand what is needed.
+
+2. What are the tradeoffs of using arrays and hashes for this challenge?
+
+	We used both arrays and a hash, but our main object was a hash which we thought made sense given the information needed.
+
+3. What does a method return?
+
+	Method returns a value, whatever you tell is to. 
+
+4. What kind of things can you pass into methods as arguments?
+	
+	You can pass strings, intergers, arrays, hashes or code blocks into a method. 
+
+5. How can you pass information between methods?
+
+	Information can be passed between methods by passing the return from one method into the next method. Also can use instance variables.
+
+6. What concepts were solidified in this challenge, and what concepts are still confusing?
+
+	This challenge helped me get a better understanding on passing arguments into methods, and the expected return from the method. Also helped clear up block a bit.
+
+=end
