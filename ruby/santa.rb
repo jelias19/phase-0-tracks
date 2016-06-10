@@ -4,8 +4,8 @@
 
 class Santa
 
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader 
+	attr_accessor :gender,:age, :ethnicity
 
 
 	# Method that prints "Initializing Santa instance"
@@ -70,7 +70,6 @@ ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to sa
 
 genders.length.times  {|i| santas << Santa.new(genders[i], ethnicities[i])}
 
-p santas
 #p santas
 #santas << Santa.new("female", "latino")
 #santas << Santa.new("male", "white")
@@ -81,4 +80,23 @@ p santas
 #get_mad_at("Dancer")
 #p santas 
 
+
+
+
+#RELEASE 4
+
+120.times do 
+	santas << Santa.new(genders.sample, ethnicities.sample)
+end
+
+santas.map do |santa|
+	santa.age = rand(140)	
+end
+
+#DRIVER CODE
+
+#DRIVER CODE
+santas.each do |santa|
+puts "Say hello to the #{santa.gender}, #{santa.ethnicity} that is #{santa.age} years old."
+end
 
