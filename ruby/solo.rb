@@ -51,6 +51,8 @@ player.fight("Rangers")
 =end
 
 hockey_team = []
+
+=begin
 positions = ["right wing", "left wing", "center", "left defenseman", "right defenseman", "goalie"]
 hands = ["Right Handed", "Left Handed"]
 
@@ -66,6 +68,17 @@ end
 hockey_team.each do |player|
 puts "On the ice for the #{player.hometeam}, wearing ##{player.number} shooting #{player.hand}, playing #{player.position}."
 end
+=end
+
+
+#USER INTERFACE
+#Ask user if they would like to add additional players to the team?
+#Ask user for players position
+#Ask user for players shot
+#Ask user for player number
+#Exit when done
+
+
 
 
 
