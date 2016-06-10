@@ -3,6 +3,11 @@
 # BUSINESS LOGIC
 
 class Santa
+
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
+
 	# Method that prints "Initializing Santa instance"
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -31,23 +36,24 @@ class Santa
 	end
 
 	def get_mad_at(reindeer_name)
-		@reindeer_ranking.insert(-1, "reindeer_name",)
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking.insert(-1, reindeer_name,)
 	end
 
 	#Getter method age
-	def age
-		@age
-	end
+	#def age
+	#	@age
+	#end
 
 	#Getter method ethnicity
-	def ethnicity
-		@ethnicity
-	end
+	#def ethnicity
+	#	@ethnicity
+	#end
 
 	#Setter method gender
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+	#def gender=(new_gender)
+	#	@gender = new_gender
+	#end
 
 end
 
@@ -65,12 +71,14 @@ ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to sa
 genders.length.times  {|i| santas << Santa.new(genders[i], ethnicities[i])}
 
 p santas
+#p santas
 #santas << Santa.new("female", "latino")
 #santas << Santa.new("male", "white")
 #santas << Santa.new("female", "chinese")
 
 #p santas
 
-get_mad_at("Chuck")
+#get_mad_at("Dancer")
+#p santas 
 
 
