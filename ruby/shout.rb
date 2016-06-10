@@ -8,3 +8,9 @@ module Shout
   	end
 end
 
+#DRIVER CODE
+
+Shout.yell_angrily("I hate you")
+Shout.yell_angrily("So mean")
+Shout.yelling_happily("Can't Wait")
+Shout.yelling_happily("Good seeing you")
