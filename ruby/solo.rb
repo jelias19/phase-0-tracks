@@ -6,29 +6,68 @@
 	#Name:
 	#Hand: (left or right)
 	#Position (varies)
+	#Number
 #Methods
 	#Pass
 	#Score
-	#Fight
+	#Fight(opponent)
 
 class Hockey
 
+	attr_reader :hometeam
+	attr_accessor :other_team, :name, :hand, :position, :number
+
+	def initialize(position, hand)
+		puts "Let the game begin."
+		@other_team = other_team
+		@name = name
+		@position = position
+		@hand = hand
+		@number = 1
+		@hometeam = "Islanders"
+	end
+
 	def pass
-		puts "pass the puck"
+		puts "#{name} passes the puck."
 	end
 
 	def score
 		puts "shoots and scores"
 	end
 
-	def fight
-		puts "throws a punch, and knocks him out."
+	def fight(other_team)
+		puts "throws a punch at the #{other_team}'s player, and knocks him out."
 	end	
 
 end	
 
-hockey = Hockey.new
-hockey.pass
-hockey.score
-hockey.fight
+
+#DRIVER CODE
+=begin
+player = Hockey.new("Jeff")
+player.pass
+player.score
+player.fight("Rangers")
+=end
+
+hockey_team = []
+positions = ["right wing", "left wing", "center", "left defenseman", "right defenseman", "goalie"]
+hands = ["Right Handed", "Left Handed"]
+
+5.times do 
+	hockey_team << Hockey.new(positions.sample, hands.sample)
+end
+
+hockey_team.map do |player|
+	player.number = rand(1..99)
+end
+
+
+hockey_team.each do |player|
+puts "On the ice for the #{player.hometeam}, wearing ##{player.number} shooting #{player.hand}, playing #{player.position}."
+end
+
+
+
+
 
