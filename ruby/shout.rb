@@ -41,6 +41,8 @@ module Shout
   		include Shout
   	end
 
+#DRIVER CODE
+
 goal = Goal.new
 p goal.yell_angrily("Other team scores")
 p goal.yelling_happily("We scored")
@@ -48,22 +50,3 @@ p goal.yelling_happily("We scored")
 save = Save.new
 p save.yell_angrily("How'd he make that save")
 p save.yelling_happily("Great save by the goaltender")
-
-=begin
-
-module Flight
-  def take_off(altitude)
-    puts "Taking off and ascending until reaching #{altitude} ..."
-  end
-end
-
-class Bird
-	include Flight
-end
-
-class Plane
-	include Flight
-end
-
-
-=end
