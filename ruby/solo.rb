@@ -17,8 +17,8 @@ class Hockey
 	attr_reader :hometeam
 	attr_accessor :other_team, :name, :hand, :position, :number
 
-	def initialize(position, hand)
-		puts "Let the game begin."
+	def initialize(name)
+		puts "Let's add another player."
 		@other_team = other_team
 		@name = name
 		@position = position
@@ -78,7 +78,33 @@ end
 #Ask user for player number
 #Exit when done
 
+puts "Do you want to add a player to the roster? 'yes' or 'no'"
+	add_player = gets.chomp
 
+until add_player == "no"
+	puts "What is the name of this player?"
+	name = gets.chomp
+	hockey_team << player = Hockey.new(name)
+
+	puts "What position does #{name} play?"
+	position = gets.chomp
+	player.position = position
+
+	puts "Does #{name} play left handed or right handed? 'left' or 'right'"
+	hand = gets.chomp
+	player.hand = hand
+
+	puts "What number does the #{hand} handed #{position} wear?"
+	number = gets.to_i
+	player.number = number
+
+	puts "Do you want to add a player to the roster? 'yes' or 'no'"
+	add_player = gets.chomp
+end
+
+hockey_team.each do |player|
+	puts "Playing #{player.position}, wearing ##{player.number}, shooting #{player.hand} handed, #{player.name}!!!!"
+end
 
 
 
