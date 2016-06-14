@@ -4,25 +4,30 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+
+# Require_relative pairs the current file with a file relative to selected file. 
+#Require is a derivative of require_relative, but it is much more wordy and directs 
+#using absolute path.
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+# Initializes VirusPredictor using three arguments and sets those arguments equal to attributes @state, @population, @population_density
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# Calling the following two methods setting attributes as their arguments
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+# Taking arguments defined in virus_effects and determining number of deaths based on @population_density and @population of each state and outputting how many people will die in each state due to outbreak.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +45,8 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+  
+# Taking arguments defined in virus_effects and determining how quickly the virus will spread depending on @state and @population_density.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
