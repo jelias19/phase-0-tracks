@@ -11,4 +11,13 @@ function reverse(str){
 	return reversedString;
 }
 
+
+//Driver Code
 console.log(reverse("Reverse Me"))
+
+if (2 >= 1){
+	console.log(reverse("Reverse me"))
+}
+else {
+	console.log("Unable to reverse")
+}
