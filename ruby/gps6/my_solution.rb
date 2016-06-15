@@ -104,9 +104,29 @@ alaska.virus_effects
 # Reflection Section
 
 What are the differences between the two different hash syntaxes shown in the state_data file?
+ 
+  The differences between the two hashes is the way you are connecting the key with its given value. 
+  The smaller hash uses a colon to assign the value to its keys, and are symbols instead of strings. 
+  The larger hash is assigning a key to a value with a string.
+
 What does require_relative do? How is it different from require?
+
+  Require_Relative allows us to retrieve data stored in another file and use within this file, as if 
+  the code was written in the same location. It is using is relative path to original file. Require 
+  also allows us to use another file, but a more exact path is required.
+
 What are some ways to iterate through a hash?
+
+  You can iterate through a hash using various methods. You can use ".each" to iterate through 
+  the hash and take the key and value as parameters. 
+
 When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+  The scope of the instance variables being called as attributes on the virus_effects method.
+
 What concept did you most solidify in this challenge?
+
+  I enjoyed learning the new concept of Private, and helped me gain a better understanding of instance 
+  variables, and how to iterate through a hash that has another hash within. 
 
 =end
