@@ -1,3 +1,4 @@
+//FIND THE LONGEST PHRASE USING SORT FUNCTION
 //Function that takes an array of strings
 //Assess the length of each string in the array
 //Sort array into order based on length
@@ -6,14 +7,27 @@
 var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
 var sort = teams.sort(function(a,b){ return b.length - a.length});
 
-
-
 var states = ["New York", "New Jersey", "Florida", "Idaho"];
 var sort1 = states.sort(function(a,b){ return b.length - a.length});
 
+//DRIVER CODE
+console.log(sort[0])
+console.log(sort1[0])
 
+//FIND THE LONGEST PHRASE CHECKING LENGTH OF EACH
 
+var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
+var long = 0;
+var longestString = "";
+for (var i=0; i < teams.length; i++) {
+    if(teams[i].length > long) {
+        long = teams[i].length;
+        longestString = teams[i];
+     }
+}
+console.log(longestString);
 
+//FIND A KEY-VALUE MATCH
 //Function that looks at two objects
 //Check objects for at least one key-value pair
 //Return true if value is in both objects, else false
@@ -35,7 +49,7 @@ player2.position = 'Right Defenseman';
 player2.team = "NYI";
 console.log(player2)
 
-
+//TEST CODE
 if (player.name == player2.name){
 	console.log("Players have the same name");
 } else {
@@ -60,8 +74,12 @@ if (player.team == player2.team){
 	console.log("The two players, " + player.name + " and " + player2.name + "do not play on the same team");
 }
 
+//GENERATE RANDOM TEST DATA
+//Take an integers as a length
+//Build and return an array of strings with given length
+
+arrayOfWords = []
 
 
-//DRIVER CODE
-console.log(sort[0])
-console.log(sort1[0])
+
+
