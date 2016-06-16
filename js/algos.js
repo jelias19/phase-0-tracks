@@ -11,22 +11,31 @@ var states = ["New York", "New Jersey", "Florida", "Idaho"];
 var sort1 = states.sort(function(a,b){ return b.length - a.length});
 
 //DRIVER CODE
-console.log(sort[0])
-console.log(sort1[0])
+console.log(sort[0]);
+console.log(sort1[0]);
+console.log("-------");
 
 //FIND THE LONGEST PHRASE CHECKING LENGTH OF EACH
 
 var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
-var long = 0;
-var longestString = "";
+
+function lengthCheck(){
+this.long = 0;
+this.longestString = "";
 for (var i=0; i < teams.length; i++) {
     if(teams[i].length > long) {
         long = teams[i].length;
-        longestString = teams[i];
-     }
+        longestString = teams[i]; 
+		console.log(longestString);
+	}	 
+	else
+	{
+		}
 }
-console.log(longestString);
+}
 
+lengthCheck(teams)
+console.log("---------");
 //FIND A KEY-VALUE MATCH
 //Function that looks at two objects
 //Check objects for at least one key-value pair
@@ -79,7 +88,4 @@ if (player.team == player2.team){
 //Build and return an array of strings with given length
 
 arrayOfWords = []
-
-
-
 
