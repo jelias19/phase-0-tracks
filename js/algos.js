@@ -8,3 +8,7 @@ var sort = teams.sort(function(a,b){ return b.length - a.length});
 
 console.log(sort[0])
 
+var states = ["New York", "New Jersey", "Florida", "Idaho"];
+var sort1 = states.sort(function(a,b){ return b.length - a.length});
+
+console.log(sort1[0])
