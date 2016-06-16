@@ -20,8 +20,8 @@ console.log("-------");
 var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
 
 function lengthCheck(){
-this.long = 0;
-this.longestString = "";
+var long = 0;
+var longestString = "";
 for (var i=0; i < teams.length; i++) {
     if(teams[i].length > long) {
         long = teams[i].length;
@@ -35,7 +35,7 @@ for (var i=0; i < teams.length; i++) {
 }
 
 lengthCheck(teams)
-console.log("---------");
+console.log("---------"); 
 //FIND A KEY-VALUE MATCH
 //Function that looks at two objects
 //Check objects for at least one key-value pair
