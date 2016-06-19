@@ -19,28 +19,40 @@ console.log("-------");
 
 var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
 
-function lengthCheck(){
-var long = 0;
+function lengthCheck(array){
 var longestString = "";
-for (var i=0; i < teams.length; i++) {
-    if(teams[i].length > long) {
-        long = teams[i].length;
-        longestString = teams[i]; 
-		console.log(longestString);
+for (var i=0; i < array.length; i++) {
+    if(longestString.length < array[i].length{
+        longestString = array[i]; 
 	}	 
-	else
-	{
-		}
 }
+return longestString;
 }
 
-lengthCheck(teams)
+console.log(lengthCheck(teams));
 console.log("---------"); 
+
+
 //FIND A KEY-VALUE MATCH
 //Function that looks at two objects
 //Check objects for at least one key-value pair
 //Return true if value is in both objects, else false
 
+function valueMatch (object1, object2){
+	var match = false;
+	for (var a in obj1){
+	if (object1[a] == object2[a]){
+		match = true;
+	};
+	};
+	return match
+}
+
+var hockey = valueMatch({name: "Jeff", age :29}, {name: "Mike", age :25}
+console.log(hockey);
+
+var team = valueMatch({name: "Warriors", players: 10}, {name: "Cavaliers", players: 10})
+console.log(team);	
 
 //Object 1
 var player = {}
@@ -58,7 +70,8 @@ player2.position = 'Right Defenseman';
 player2.team = "NYI";
 console.log(player2)
 
-//TEST CODE
+
+//TEST CODE PRACTICING IF STATEMENTS
 if (player.name == player2.name){
 	console.log("Players have the same name");
 } else {
@@ -85,7 +98,7 @@ if (player.team == player2.team){
 
 //GENERATE RANDOM TEST DATA
 //Take an integers as a length
+//	Ask for string for as many times as number 
 //Build and return an array of strings with given length
 
-arrayOfWords = []
 
