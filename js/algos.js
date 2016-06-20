@@ -22,7 +22,7 @@ var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
 function lengthCheck(array){
 var longestString = "";
 for (var i=0; i < array.length; i++) {
-    if(longestString.length < array[i].length{
+    if(longestString.length < array[i].length){
         longestString = array[i]; 
 	}	 
 }
@@ -40,7 +40,7 @@ console.log("---------");
 
 function valueMatch (object1, object2){
 	var match = false;
-	for (var a in obj1){
+	for (var a in object1){
 	if (object1[a] == object2[a]){
 		match = true;
 	};
@@ -48,7 +48,7 @@ function valueMatch (object1, object2){
 	return match
 }
 
-var hockey = valueMatch({name: "Jeff", age :29}, {name: "Mike", age :25}
+var hockey = valueMatch({name: "Jeff", age :29}, {name: "Mike", age :25})
 console.log(hockey);
 
 var team = valueMatch({name: "Warriors", players: 10}, {name: "Cavaliers", players: 10})
@@ -96,9 +96,34 @@ if (player.team == player2.team){
 	console.log("The two players, " + player.name + " and " + player2.name + "do not play on the same team");
 }
 
+console.log("-------");
 //GENERATE RANDOM TEST DATA
 //Take an integers as a length
 //	Ask for string for as many times as number 
 //Build and return an array of strings with given length
+
+function buildArray(number){
+	var stringArray = [];
+	for (var z = 0; z < number; z++);{
+		stringArray.push(buildString());
+	}
+		return stringArray;
+}
+
+function buildString(){
+	string = "";
+	var char = "abcdefghijklmnopqrstuvwxyz";
+	var randomNumber = Math.floor((Math.random() * 10) + 1);
+	for (var a = 1; 1 <= randomNumber; a++){
+		string += char[Math.floor((Math.random() * 20))];
+	}
+	return string;
+}
+
+console.log(buildArray(4));
+console.log(lengthCheck(buildArray))
+
+
+
 
 
