@@ -21,7 +21,7 @@ var teams = ["Jets", "Islanders", "Yankees", "Knicks"];
 
 function lengthCheck(array){
 var longestString = "";
-for (var i=0; i < array.length; i++) {
+for (var i = 0; i < array.length; i++) {
     if(longestString.length < array[i].length){
         longestString = array[i]; 
 	}	 
@@ -114,7 +114,7 @@ function buildString(){
 	string = "";
 	var char = "abcdefghijklmnopqrstuvwxyz";
 	var randomNumber = Math.floor((Math.random() * 10) + 1);
-	for (var a = 1; 1 <= randomNumber; a++){
+	for (var a = 1; a <= randomNumber; a++){
 		string += char[Math.floor((Math.random() * 20))];
 	}
 	return string;
