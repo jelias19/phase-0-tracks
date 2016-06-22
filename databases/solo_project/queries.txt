@@ -1,0 +1,48 @@
+Release 2
+
+1.SELECT * FROM offices;
+	1|New York|120
+	2|Denver|30
+	3|London|50
+
+2.UPDATE sales_reps SET team_lead="true" WHERE name="John Smith";
+	no output, but checked table to see update, John Smith team_lead value now "true"
+
+3.SELECT * FROM sales_reps, offices WHERE sales_reps.office_id = offices.id;
+	1|John Smith|true|1|1|New York|120
+	2|Jessica Jones|true|2|2|Denver|30
+	3|Mike Harrington|false|2|2|Denver|30
+	4|James Alvarez|true|3|3|London|50
+	5|Ashley Klein|false|3|3|London|50
+	6|Brittany Brick|true|1|1|New York|120
+
+4.SELECT sales_reps.name, sales_reps.team_lead, offices.office FROM sales_reps JOIN offices ON sales_reps.office_id=offices.id;
+	John Smith|true|New York
+	Jessica Jones|true|Denver
+	Mike Harrington|false|Denver
+	James Alvarez|true|London
+	Ashley Klein|false|London
+	Brittany Brick|true|New York
+
+5. DELETE FROM sales_reps WHERE name="John Smith";
+	no output, but checked table to set update. John Smith row no longer exists
+
+Release 3
+
+I found three other tupes of Joins; INNER JOIN, LEFT JOIN, RIGHT JOIN. All of my tables had data that matched the second table, so all rows had been listed.
+
+SELECT sales_reps.name, offices.office FROM sales_reps INNER JOIN offices ON sales_reps.office_id=offices.id;
+	Jessica Jones|Denver
+	Mike Harrington|Denver
+	James Alvarez|London
+	Ashley Klein|London
+	Brittany Brick|New York	 
+
+SELECT sales_reps.name, offices.office FROM sales_reps LEFT JOIN offices ON sales_reps.office_id=offices.id;
+	Jessica Jones|Denver
+	ike Harrington|Denver
+	James Alvarez|London
+	Ashley Klein|London
+	Brittany Brick|New York
+
+
