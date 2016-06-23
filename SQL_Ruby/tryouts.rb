@@ -4,8 +4,10 @@
 # 		name, jersey number, position, age, previous team
 
 # Require gems
+require 'sqlite3'
 
 # Create a SQLite3 Database
+tryout_roster = SQLite3::Database.new("players.db")
 
 # Create a table of players
 
