@@ -8,6 +8,8 @@ require 'sqlite3'
 
 # Create a SQLite3 Database
 tryout_roster = SQLite3::Database.new("players.db")
+#tryout_roster.results_as_hash = true
+
 
 create_table_cmd = <<-BING
 	CREATE TABLE IF NOT EXISTS tryout_roster(
@@ -23,13 +25,69 @@ BING
 tryout_roster.execute(create_table_cmd)
 
 # Add initial player
-tryout_roster.execute("INSERT INTO tryout_roster (name, age, position, hand) VALUES ('Jeff Elias', 29, 'Center', 'Right')")
+#tryout_roster.execute("INSERT INTO tryout_roster (name, age, position, hand) VALUES ('Jeff Elias', 29, 'center', 'right')")
 
+# Retrive the players who have been signed up to tryout
+#players = tryout_roster.execute("SELECT * FROM tryout_roster")
+#puts players.class
+#p players
 
-# Build a user interface that asks to enter each players information
+#players.each do |player|
+#	puts "#{player['name']} is #{player['age']}, playing #{player['position']} and shoots with his #{player['hand']} hand."
+#end
+
+#Add initial player trying out for hockey team
+def create_player(tryout_roster, name, age, position, hand)
+	tryout_roster.execute("INSERT INTO tryout_roster (name, age, position, hand) VALUES (?, ?, ?, ?)", [name, age, position, hand])
+	puts "The player had been added. Good luck."
+end
+
+def remove_player(tryout_roster, name)
+	tryout_roster.execute("DELTE FROM tryout_roster WHERE name=?", [name])
+end
+
+def show_all_players(tryout_roster, name, age, position, hand)
+	tryout_roster.execute("SELECT * FROM tryout_roster")
+end
+
+# Build a user interface that asks to enter each players information, view players, removte player
 # Continue add players until user 'quits'
 
+action = ""
 
+while action != "quit"
+
+puts "Welcome to the MRHL tryouts. Do you want to add, remove, or view players?"
+puts "Type 'add' to add player to roster."
+puts "Type 'remove' to remove player from roster."
+puts "Type 'view' to view players signed up for tryouts."
+puts "Type 'quit' to exit."
+action = gets.chomp
+
+case action
+	when "add"
+		puts "What is the players full name?"
+		name_add = gets.chomp
+		puts "How old is #{name_add}?"
+		age_add = gets.to_i
+		puts "What position does #{name_add} play?"
+		position_add = gets.chomp
+		puts "What hand does #{name_add} shoot?"
+		hand_add = gets.chomp
+		create_player(tryout_roster, name_add, age_add, position_add, hand_add)
+		puts "Good luck trying out."
+	when "quit"
+		puts "Thank you for using the MRHL tryout form."
+	else
+		puts "That is not a valid entry. Please try again"
+		puts "Welcome to the MRHL tryouts. Do you want to add, remove, or view players?"
+		puts "Type 'add' to add player to roster."
+		puts "Type 'remove' to remove player from roster."
+		puts "Type 'view' to view players signed up for tryouts."
+		puts "Type 'quit' to exit."
+		action = gets.chomp
+	end
+end
 
 
 
