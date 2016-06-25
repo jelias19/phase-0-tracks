@@ -8,8 +8,7 @@ require 'sqlite3'
 
 # Create a SQLite3 Database
 tryout_roster = SQLite3::Database.new("players.db")
-#tryout_roster.results_as_hash = true
-
+tryout_roster.results_as_hash = true
 
 create_table_cmd = <<-BING
 	CREATE TABLE IF NOT EXISTS tryout_roster(
@@ -39,15 +38,20 @@ tryout_roster.execute(create_table_cmd)
 #Add initial player trying out for hockey team
 def create_player(tryout_roster, name, age, position, hand)
 	tryout_roster.execute("INSERT INTO tryout_roster (name, age, position, hand) VALUES (?, ?, ?, ?)", [name, age, position, hand])
-	puts "The player had been added. Good luck."
+	puts "Action complete"
 end
 
+#Remove a player from tryouts
 def remove_player(tryout_roster, name)
 	tryout_roster.execute("DELTE FROM tryout_roster WHERE name=?", [name])
 end
 
-def show_all_players(tryout_roster, name, age, position, hand)
-	tryout_roster.execute("SELECT * FROM tryout_roster")
+#Show players by name and position
+def show_all_players(tryout_roster, name, position)
+	roster = tryout_roster.execute("SELECT * FROM tryout_roster")
+	roster.each do |roster|
+		puts "Name: #{roster['name']}, Position: #{roster['position']}"
+	end
 end
 
 # Build a user interface that asks to enter each players information, view players, removte player
@@ -67,15 +71,18 @@ action = gets.chomp
 case action
 	when "add"
 		puts "What is the players full name?"
-		name_add = gets.chomp
-		puts "How old is #{name_add}?"
-		age_add = gets.to_i
-		puts "What position does #{name_add} play?"
-		position_add = gets.chomp
-		puts "What hand does #{name_add} shoot?"
-		hand_add = gets.chomp
-		create_player(tryout_roster, name_add, age_add, position_add, hand_add)
-		puts "Good luck trying out."
+		name = gets.chomp
+		puts "How old is #{name}?"
+		age = gets.to_i
+		puts "What position does #{name} play?"
+		position = gets.chomp
+		puts "What hand does #{name} shoot with?"
+		hand = gets.chomp
+		create_player(tryout_roster, name, age, position, hand)
+		puts "#{name} has been added to the tryouts. Good luck trying out."
+	when "view"
+		puts "The follwoing players will be trying out."
+		show_all_players(tryout_roster, name, position)
 	when "quit"
 		puts "Thank you for using the MRHL tryout form."
 	else
