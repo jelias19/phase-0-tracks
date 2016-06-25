@@ -16,7 +16,8 @@ create_table_cmd = <<-BING
 		name VARCHAR(255),
 		age INT,
 		position VARCHAR(255),
-		hand VARCHAR(255)
+		hand VARCHAR(255),
+		number INT
 	)
 BING
 
@@ -36,21 +37,19 @@ tryout_roster.execute(create_table_cmd)
 #end
 
 #Add initial player trying out for hockey team
-def create_player(tryout_roster, name, age, position, hand)
-	tryout_roster.execute("INSERT INTO tryout_roster (name, age, position, hand) VALUES (?, ?, ?, ?)", [name, age, position, hand])
-	puts "Action complete"
+def create_player(tryout_roster, name, age, position, hand, number)
+	tryout_roster.execute("INSERT INTO tryout_roster (name, age, position, hand, number) VALUES (?, ?, ?, ?, ?)", [name, age, position, hand, number])
 end
 
 #Remove a player from tryouts
 def remove_player(tryout_roster, name)
-	tryout_roster.execute("DELTE FROM tryout_roster WHERE name=?", [name])
+	tryout_roster.execute("DELETE FROM tryout_roster WHERE name=?", [name])
 end
 
 #Show players by name and position
-def show_all_players(tryout_roster, name, position)
+def show_all_players(tryout_roster, name, position, number)
 	roster = tryout_roster.execute("SELECT * FROM tryout_roster")
 	roster.each do |roster|
-		puts "Name: #{roster['name']}, Position: #{roster['position']}"
 	end
 end
 
@@ -78,16 +77,28 @@ case action
 		position = gets.chomp
 		puts "What hand does #{name} shoot with?"
 		hand = gets.chomp
-		create_player(tryout_roster, name, age, position, hand)
+		puts "What number does #{name} where?"
+		number = gets.to_i
+		create_player(tryout_roster, name, age, position, hand, number)
 		puts "#{name} has been added to the tryouts. Good luck trying out."
 	when "view"
 		puts "The follwoing players will be trying out."
-		show_all_players(tryout_roster, name, position)
+		puts "--------------------"
+		show_all_players(tryout_roster, name, position, number)
+		puts "Name: #{roster['name']}, Position: #{roster['position']}, Number: #{number}"
+		puts "We wish them luck."
+		puts "--------------------"
+	when "remove"
+		puts "What player would like to cut from the tryout?"
+		name = gets.chomp
+		remove_player(tryout_roster, name)
+		puts "#{name} has been cut from tryouts. Better luck next year."
 	when "quit"
 		puts "Thank you for using the MRHL tryout form."
 	else
 		puts "That is not a valid entry. Please try again"
-		puts "Welcome to the MRHL tryouts. Do you want to add, remove, or view players?"
+		puts "---------------------"
+		puts "Do you want to add, remove, or view players?"
 		puts "Type 'add' to add player to roster."
 		puts "Type 'remove' to remove player from roster."
 		puts "Type 'view' to view players signed up for tryouts."
