@@ -46,11 +46,14 @@ def remove_player(tryout_roster, name)
 	tryout_roster.execute("DELETE FROM tryout_roster WHERE name=?", [name])
 end
 
-#Show players by name and position
-def show_all_players(tryout_roster, name, position, number)
+#Show players by name, position, and number
+def show_all_players(tryout_roster)
 	roster = tryout_roster.execute("SELECT * FROM tryout_roster")
 	roster.each do |roster|
+		puts "Name: #{roster['name']}, Position: #{roster['position']}, #Number: #{roster['number']}"
 	end
+		puts "We wish them luck."
+		puts "--------------------"
 end
 
 # Build a user interface that asks to enter each players information, view players, removte player
@@ -62,11 +65,53 @@ while action != "quit"
 
 puts "Welcome to the MRHL tryouts. Do you want to add, remove, or view players?"
 puts "Type 'add' to add player to roster."
-puts "Type 'remove' to remove player from roster."
+puts "Type 'remove' to remove player from tryouts."
 puts "Type 'view' to view players signed up for tryouts."
 puts "Type 'quit' to exit."
 action = gets.chomp
 
+	if action == "add"
+		puts "What is the players full name?"
+		name = gets.chomp
+		puts "How old is #{name}?"
+		age = gets.to_i
+		puts "What position does #{name} play?"
+		position = gets.chomp
+		puts "What hand does #{name} shoot with?"
+		hand = gets.chomp
+		puts "What number does #{name} wear?"
+		number = gets.to_i
+		create_player(tryout_roster, name, age, position, hand, number)
+		puts "#{name} has been added to the tryouts. Good luck trying out."
+	elsif action == "view"
+		puts "The following players will be trying out."
+		puts "--------------------"
+		show_all_players(tryout_roster)	
+	elsif action == "remove"
+		puts "What player would like to cut from the tryout?"
+		name = gets.chomp
+		remove_player(tryout_roster, name)
+		puts "#{name} has been cut from tryouts. Better luck next year."
+	elsif action == "quit"
+		puts "Thank you for using the MRHL tryout form."
+	else
+		puts "That is not a valid entry. Please try again"
+		puts "---------------------"
+		puts "Do you want to add, remove, or view players?"
+		puts "Type 'add' to add player to roster."
+		puts "Type 'remove' to remove player from roster."
+		puts "Type 'view' to view players signed up for tryouts."
+		puts "Type 'quit' to exit."
+		action = gets.chomp
+	end
+end
+
+
+
+
+
+####USING WHEN STATEMENTS
+=begin
 case action
 	when "add"
 		puts "What is the players full name?"
@@ -77,7 +122,7 @@ case action
 		position = gets.chomp
 		puts "What hand does #{name} shoot with?"
 		hand = gets.chomp
-		puts "What number does #{name} where?"
+		puts "What number does #{name} wear?"
 		number = gets.to_i
 		create_player(tryout_roster, name, age, position, hand, number)
 		puts "#{name} has been added to the tryouts. Good luck trying out."
@@ -85,7 +130,7 @@ case action
 		puts "The follwoing players will be trying out."
 		puts "--------------------"
 		show_all_players(tryout_roster, name, position, number)
-		puts "Name: #{roster['name']}, Position: #{roster['position']}, Number: #{number}"
+		puts "Name: #{roster['name']}, Position: #{roster['position']}, Number: #{roster[number]}"
 		puts "We wish them luck."
 		puts "--------------------"
 	when "remove"
@@ -107,7 +152,7 @@ case action
 	end
 end
 
-
+=end
 
 
 
