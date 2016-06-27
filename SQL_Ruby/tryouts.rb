@@ -61,13 +61,15 @@ end
 
 action = ""
 
+puts "Welcome to the MRHL tryouts."
+
 while action != "quit"
 
-puts "Welcome to the MRHL tryouts. Do you want to add, remove, or view players?"
-puts "Type 'add' to add player to roster."
-puts "Type 'remove' to remove player from tryouts."
-puts "Type 'view' to view players signed up for tryouts."
-puts "Type 'quit' to exit."
+puts "Do you want to add, remove, or view players?
+Type 'add' to add player to roster.
+Type 'remove' to remove player from tryouts.
+Type 'view' to view players signed up for tryouts.
+Type 'quit' to exit."
 action = gets.chomp
 
 	if action == "add"
@@ -130,9 +132,6 @@ case action
 		puts "The follwoing players will be trying out."
 		puts "--------------------"
 		show_all_players(tryout_roster, name, position, number)
-		puts "Name: #{roster['name']}, Position: #{roster['position']}, Number: #{roster[number]}"
-		puts "We wish them luck."
-		puts "--------------------"
 	when "remove"
 		puts "What player would like to cut from the tryout?"
 		name = gets.chomp
